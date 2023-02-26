@@ -6,6 +6,7 @@ import pandas as pd
 
 st.title("Foot Traffic Dashboard")
 
+@st.cache()
 def load_data():
     
     stores = pd.read_csv("data/db/stores.csv", dtype={"store_id": "string"})

@@ -11,12 +11,12 @@ Interested in working with Launchpad Analytics to build a custom workshop for yo
 
 - To support our workshops and ensure that all code components are up to date, we use this repo to store and track changes against our source of truth for any notebooks or scripts we may use.
 - We utilize a number of leading platforms for our worksops like Google Colab, Deepnote, Hex, etc., and we use this repo to quickly spin up the proper environment on the desired platform.
-- Platform-specific files will be stored in their own directory along with any variants of the source files. Fpr example, all files for a workshop hosted on Deepnote will be located in the `deepnote/` directory.
+- Platform-specific files will be stored in their own directory along with any variants of the source files. For example, all files for a workshop hosted on Deepnote will be located in the `deepnote/` directory.
 - Any common datasets will be stored in the `data/` directory.
 
 ## Do I need to clone this repository?
 
-- You will only need to clone this repository if the workshop guide explicitly instructs says so.
+- You will only need to clone this repository if the workshop guide explicitly instructs you to do so.
 - Most of the time, the workshop guide will have a link to an external environment that will already have this repo cloned and set up for the workshop.
 - If you wish to use your local machine or an environment different than what is provided by the workshop, you can clone this repo into your desired location.
 

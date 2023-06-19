@@ -38,4 +38,8 @@ st.line_chart(visits_by_day)
 st.subheader("Store Locations")
 st.map(stores)
 
+st.subheader("Most Stores by State")
 st.bar_chart(stores["state"].value_counts().head())
+
+st.subheader("Highest Foot Traffic by State")
+st.bar_chart(visits["state"].value_counts().head(5))

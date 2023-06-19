@@ -7,9 +7,9 @@ import time
 
 # @st.cache
 def load_data():
-    stores = pd.read_csv("data/db/stores.csv", dtype={"store_id": "string"})
-    customers = pd.read_csv("data/db/customers.csv", dtype={"customer_id": "string"})
-    visits = pd.read_csv("data/db/visits.csv", dtype={"customer_id":"string", "store_id":"string"})
+    stores = pd.read_csv("../data/db/stores.csv", dtype={"store_id": "string"})
+    customers = pd.read_csv("../data/db/customers.csv", dtype={"customer_id": "string"})
+    visits = pd.read_csv("../data/db/visits.csv", dtype={"customer_id":"string", "store_id":"string"})
     visits["visit_date"] = pd.to_datetime(visits["visit_date"])
     
     data = visits.merge(customers, on="customer_id", how="left").merge(stores, on="store_id", how="left")
@@ -27,7 +27,7 @@ if data_view:
 
 @st.cache
 def kpi_deltas():
-    v = pd.read_csv("data/db/visits.csv")
+    v = pd.read_csv("../data/db/visits.csv")
     num_visits = v.shape[0]
     revenue = v['order_total'].sum()
     
@@ -69,7 +69,7 @@ with col2:
 
 st.subheader("Members vs. Nonmembers")
 
-x = data[['visit_date', 'order_total', 'member']].groupby(["visit_date", "member"]).sum().unstack()["order_total"]
+x = data[['visit_date', 'order_total', 'is_member']].groupby(["visit_date", "is_member"]).sum().unstack()["order_total"]
 x.columns = ["nonmember", "member"]
 x.index = pd.to_datetime(x.index)
 x = x.resample("W").sum()

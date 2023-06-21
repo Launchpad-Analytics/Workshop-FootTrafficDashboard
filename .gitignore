@@ -1,2 +1,6 @@
 # exclude contents in data folder
 data/*
+data.db
+#exclude project artifacts
+app.py
+live-app.py
